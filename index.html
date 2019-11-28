@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 <meta charset="utf-8">
 <title>Get Text Input Field Value in JavaScript</title>
 </head>
 <body>
-    <input type="text" placeholder="Type something..." id="zunifier">
-    <button type="button" onclick="getInputValue();">Zunify!</button>
-    <input id="zunified" 
-           type="text" 
-           class="Disable" 
-           value="" /> 
+    <textarea placeholder="Wet's make this text more zun uwu" id="zunifier" class="pyonpyon"></textarea>
+    <button type="button" class="buttonuwu" onclick="getInputValue();">Zunify!</button>
+    <textarea id="zunified" class="pyonpyon"></textarea> 
+    <style>
+        .pyonpyon{
+            width: 100%;
+            height: 300px;
+            font-size: 32px;
+            padding-left:0;
+            padding-top:0;
+        }
+        .buttonuwu{
+            text-align: center;
+            width: 100%;
+            height: 25px;
+        }
+    </style>
     <script>
-        function getInputValue(){
-            var inputVal = $("zunifier").value();
+        function getInputValue(element){
+            var inputVal = $("#zunifier").val();
             var pwocessedtext = inputVal.replace('r', 'w');
+            pwocessedtext = pwocessedtext.replace('zun', 'zunnybunny');
+            pwocessedtext = pwocessedtext.replace('ll', 'ww');
             pwocessedtext = pwocessedtext.replace('l', 'w');
             pwocessedtext = pwocessedtext.replace('es ', 'ies ');
+            pwocessedtext = pwocessedtext.replace(/\r?\n/g, '<br/>');
             pwocessedtext = pwocessedtext + ' pyon pyon D:<';
-            alert(pwocessedtext);
             $('#zunified').val(pwocessedtext);
             // alert(inputVal);
         }
