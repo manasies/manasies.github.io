@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 <meta charset="utf-8">
 <title>Get Text Input Field Value in JavaScript</title>
 </head>
 <body>
-    <input type="text" placeholder="Type something..." id="myInput">
+    <input type="text" placeholder="Type something..." id="zunifier">
     <button type="button" onclick="getInputValue();">Zunify!</button>
-    
+    <input id="zunified" 
+           type="text" 
+           class="Disable" 
+           value="" /> 
     <script>
         function getInputValue(){
-            // Selecting the input element and get its value 
-            var inputVal = document.getElementById("myInput").value;
-            
-            // Displaying the value
-            alert(inputVal);
+            var inputVal = $("zunifier").value();
+            var pwocessedtext = inputVal.replace('r', 'w');
+            pwocessedtext = pwocessedtext.replace('l', 'w');
+            pwocessedtext = pwocessedtext.replace('es ', 'ies ');
+            pwocessedtext = pwocessedtext + ' pyon pyon D:<';
+            $('#zunified').val(pwocessedtext);
+            // alert(inputVal);
         }
     </script>
 </body>
